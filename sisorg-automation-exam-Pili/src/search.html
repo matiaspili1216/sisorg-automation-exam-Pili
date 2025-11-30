@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Búsqueda de Clientes - Sistema de Gestión</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class="header-bar">
+    <div class="header-content">
+      <h1>Sistema de Gestión de Clientes</h1>
+      <div class="user-info">
+        <span id="lblUserName">Usuario: admin</span> |
+        <a href="login.html" id="lnkLogout">Cerrar Sesión</a> |
+        <a href="report.html" id="lnkReports">Reportes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="page-title">
+      <h2>Búsqueda de Clientes</h2>
+    </div>
+
+    <div class="search-panel">
+      <form id="frmSearch" name="frmSearch">
+        <table class="form-table">
+          <tr>
+            <td class="form-label">
+              <label for="txtSearchName">Nombre:</label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtSearchName" name="txtSearchName" class="form-control" maxlength="100" />
+            </td>
+            <td class="form-label">
+              <label for="txtSearchEmail">Email:</label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtSearchEmail" name="txtSearchEmail" class="form-control" maxlength="100" />
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <label for="ddlSearchStatus">Estado:</label>
+            </td>
+            <td class="form-input">
+              <select id="ddlSearchStatus" name="ddlSearchStatus" class="form-control">
+                <option value="">Todos</option>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+              </select>
+            </td>
+            <td colspan="2" class="form-buttons">
+              <button type="submit" id="btnSearch" class="btn btn-primary">Buscar</button>
+              <button type="button" id="btnClear" class="btn btn-secondary">Limpiar</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <div class="results-panel">
+      <div class="results-header">
+        <h3>Resultados de Búsqueda</h3>
+        <span id="lblResultCount" class="result-count">0 registros encontrados</span>
+      </div>
+
+      <div class="grid-container">
+        <table id="gvResults" class="data-grid">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Teléfono</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="gvResultsBody">
+            <!-- Datos cargados dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+      <div id="divNoResults" class="no-results" style="display:none;">
+        No se encontraron registros que coincidan con los criterios de búsqueda.
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+
+</html>

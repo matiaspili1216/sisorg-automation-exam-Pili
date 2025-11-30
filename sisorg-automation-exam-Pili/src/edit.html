@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edición de Cliente - Sistema de Gestión</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <div class="header-bar">
+    <div class="header-content">
+      <h1>Sistema de Gestión de Clientes</h1>
+      <div class="user-info">
+        <span id="lblUserName">Usuario: admin</span> |
+        <a href="login.html" id="lnkLogout">Cerrar Sesión</a> |
+        <a href="report.html" id="lnkReports">Reportes</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-container">
+    <div class="page-title">
+      <h2>Edición de Cliente</h2>
+    </div>
+
+    <div class="edit-panel">
+      <form id="frmEdit" name="frmEdit">
+        <input type="hidden" id="hdnClientId" name="hdnClientId" />
+
+        <table class="form-table">
+          <tr>
+            <td class="form-label">
+              <label for="txtClientId">ID Cliente:</label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtClientId" name="txtClientId" class="form-control" readonly disabled />
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <label for="txtName">Nombre: <span class="required">*</span></label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtName" name="txtName" class="form-control" maxlength="100" />
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <label for="txtEmail">Email: <span class="required">*</span></label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtEmail" name="txtEmail" class="form-control" maxlength="100" />
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <label for="txtPhone">Teléfono: <span class="required">*</span></label>
+            </td>
+            <td class="form-input">
+              <input type="text" id="txtPhone" name="txtPhone" class="form-control" maxlength="20" />
+            </td>
+          </tr>
+          <tr>
+            <td class="form-label">
+              <label for="ddlStatus">Estado: <span class="required">*</span></label>
+            </td>
+            <td class="form-input">
+              <select id="ddlStatus" name="ddlStatus" class="form-control">
+                <option value="">Seleccione...</option>
+                <option value="Activo">Activo</option>
+                <option value="Inactivo">Inactivo</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <div id="divValidationErrors" class="error-message" style="display:none;"></div>
+              <div id="divSuccessMessage" class="success-message" style="display:none;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" class="form-buttons">
+              <button type="submit" id="btnSave" class="btn btn-primary">Guardar</button>
+              <button type="button" id="btnCancel" class="btn btn-secondary">Cancelar</button>
+              <button type="button" id="btnBack" class="btn btn-secondary">Volver a la búsqueda</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+  </div>
+
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/edit.js"></script>
+</body>
+
+</html>
